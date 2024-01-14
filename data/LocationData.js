@@ -1,0 +1,26 @@
+const location_name = [
+    'mandakini',
+    'jamuna',
+    'ganga',
+    'godavari',
+    'pampa',
+    'himalaya_mess',
+    'prime_mart',
+    'alakananda',
+    'saraswathi',
+    'zaithoon',
+    'narmada',
+    'brahmaputra',
+    'cauvery',
+    'tunga',
+    'bhadra',
+    'nilgiri_mess',
+    'krishna',
+    'swimming_pool',
+    'sac',
+    'watsa_stadium',
+    'taramani_guest_house',
+    'gym',
+];
+
+module.exports = location_name;

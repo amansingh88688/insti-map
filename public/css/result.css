@@ -1,0 +1,104 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+body {
+	font-family: montserrat, arial, verdana;
+    background: #9796f0;
+    background: -webkit-linear-gradient(to right, #fbc7d4, #9796f0); 
+    background: linear-gradient(to right, #fbc7d4, #9796f0); 
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+h1{
+    font-size: 40px;
+    margin-top: 100px;
+}
+.main-res{
+    width: 50%;
+    margin: auto;
+    margin-top: 50px;
+}
+.from-to-dest {
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+}
+.src, .dest{
+    text-transform: capitalize;
+}
+span{
+    font-weight: bold;
+    margin-left: 10px;
+}
+.src-dest-box {
+    background-color: white;
+    padding: 10px;
+}
+
+.distance {
+    margin-top: 30px;
+}
+.path{
+    margin-top: 20px;
+    display: flex;   
+
+}
+.from-to {
+    text-align: left;
+}
+.each-location {
+    padding: 5px 10px;
+    display: inline-block;
+    margin: 0px 10px;
+    margin-bottom: 20px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.258);
+    border-radius: 5px;
+    font-size: 14px;
+}
+.start {
+    border: 2px solid rgb(230, 79, 79);
+}
+.stop{
+    border: 2px solid rgb(48, 120, 48);
+}
+.distance-box {
+    display: inline-block;
+    padding: 5px 10px;
+    border: 2px solid grey;
+    border-radius: 5px;
+    text-transform: lowercase;
+}
+a{
+    display: inline-block;
+    margin-top: 20px;
+}
+
+
+
+@media only screen and (max-width: 1024px) {
+    .main-res{
+        width: 90%;
+    }
+}
+@media only screen and (max-width: 468px) {
+    h1{
+        margin-top: 50px;
+    }
+    .from-to-dest {
+        text-align: left;
+        display: block;
+    }
+    .hide-arrow{
+        display:none;
+    }
+    .dest {
+        margin-top: 10px;
+    }
+    .path{
+        margin-top: 10px;
+        flex-direction: column;
+    }
+    .container{
+        margin-top: 10px;
+    }
+}

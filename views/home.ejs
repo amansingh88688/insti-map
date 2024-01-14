@@ -1,0 +1,50 @@
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/images/map_pin.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Insti Map</title>
+    <script src="https://kit.fontawesome.com/95a1f26c34.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    
+    <form id="msform" action="/calculate" method="post">
+        <h1 class="fs-heading">Insti Map</h1>
+        <fieldset>
+            <h2 class="fs-title">Select Source and Destination</h2>
+            <select name="source" class="location_name" id="select1">
+                <!-- <option value="" disabled selected>From</option> -->
+                <% location_name.forEach((option)=> { %>
+                    <option value="<%= option %>"><%= option %></option>
+                <% }); %>
+            </select>
+            <i class="fa-solid fa-arrow-right-arrow-left swap-arrow" onclick="swapOptions()"></i>
+            <select name="destination" class="location_name" id="select2">
+                <!-- <option value="" disabled selected>To</option> -->
+                <% location_name.forEach((option)=> { %>
+                    <option value="<%= option %>"><%= option %></option>
+                <% }); %>
+            </select>
+            <button type="submit" class="next action-button">Get Route</button>
+        </fieldset>
+        </form>
+        <div class="owner">Made with ❣️ by Aman, <%= new Date().getFullYear(); %></div>
+
+    <script>
+        function swapOptions() {
+            const select1 = document.getElementById('select1');
+            const select2 = document.getElementById('select2');
+
+            const selectedValue1 = select1.value;
+            const selectedValue2 = select2.value;
+
+            select1.value = selectedValue2;
+            select2.value = selectedValue1;
+        }
+    </script>
+</body>
+
+</html>

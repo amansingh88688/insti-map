@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/images/map_pin.ico" type="image/x-icon">
+    <title>Shortest Distance Result</title>
+    <link rel="stylesheet" href="css/result.css">
+    <script src="https://kit.fontawesome.com/95a1f26c34.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>Route & Shortest Distance</h1>
+    <div class="main-res">
+        <% if (result.path.length > 0) { %>
+            <div class=" from-to-dest">
+                <div class="src">Source: <span><%= source %></span></div>
+                <div class="hide-arrow"><i class="fa-solid fa-arrow-right-long from-to-dest-arrow"></i></div>
+                <div class="dest">Destination: <span><%= destination %></span></div>
+            </div>
+            <div class="distance src from-to">
+                <i class="fa-solid fa-angle-right"></i> Distance: <span class="distance-box"><%= result.distance %> metres</span>
+            </div>
+            <div class="path src from-to">
+                <div style="width: 100px;">
+                    <div class="fa-solid fa-angle-right"></div> Path:
+                </div>
+                <div class="container">
+                    <% for (let i = 0; i < result.path.length; i++) { %>
+                        <span id="dynamicContent" class="each-location <% if(i==0){%>start<%} else if(i==result.path.length-1) {%>stop<%}%>"><%= result.path[i] %></span>
+                        <% if (i < result.path.length - 1) { %><i class="fa-solid fa-arrow-right"></i><% } %>
+                    <% } %>
+                </div>
+            </div>
+        <% } else { %>
+            <p>There is no path from <%= source %> to <%= destination %>.</p>
+        <% } %>
+        <a href="/">Go Back</a>
+    </div>
+
+</body>
+</html>
